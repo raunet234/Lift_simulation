@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An interactive, premium elevator mechanics and lift dispatch simulator. Features custom floor and lift counts, real-time dispatching, and dynamic animations.">
+  <title>Elevate - Premium Lift Mechanics Simulator</title>
+  
+  <!-- Font and Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <!-- Ambient background glow effects -->
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
+
+  <main class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo">
+        <span class="logo-accent">⚡</span> ELEVATE
+      </div>
+      <p class="subtitle">System Controller & Dispatch Simulation</p>
+    </header>
+
+    <!-- Setup Screen (Configuration Card) -->
+    <section id="setup-screen" class="setup-section card">
+      <h1 class="section-title">Configure Simulation</h1>
+      <p class="section-description">Define the architectural parameters for the simulator. Optimized for standard workloads up to 20 floors and 10 lifts.</p>
+      
+      <form id="setup-form" class="setup-form" onsubmit="return false;">
+        <div class="input-group">
+          <label for="input-floors">Number of Floors</label>
+          <div class="input-wrapper">
+            <input type="number" id="input-floors" name="floors" min="2" max="25" value="5" required>
+            <span class="input-unit">Floors</span>
+          </div>
+          <span class="input-hint">Enter between 2 and 25 floors</span>
+        </div>
+
+        <div class="input-group">
+          <label for="input-lifts">Number of Lifts</label>
+          <div class="input-wrapper">
+            <input type="number" id="input-lifts" name="lifts" min="1" max="10" value="3" required>
+            <span class="input-unit">Lifts</span>
+          </div>
+          <span class="input-hint">Enter between 1 and 10 lifts</span>
+        </div>
+
+        <button type="submit" id="btn-start" class="btn btn-primary">
+          Initialize Simulation
+        </button>
+      </form>
+    </section>
+
+    <!-- Simulation Screen (Initially Hidden) -->
+    <section id="sim-screen" class="sim-section hidden">
+      <!-- Control & Stats Bar -->
+      <div class="control-bar card">
+        <div class="stats-container">
+          <div class="stat-item">
+            <span class="stat-label">Floors:</span>
+            <span id="stat-floors" class="stat-value">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Lifts:</span>
+            <span id="stat-lifts" class="stat-value">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Pending Calls:</span>
+            <span id="stat-calls" class="stat-value">0</span>
+          </div>
+        </div>
+        
+        <div class="actions-container">
+          <button id="btn-reset" class="btn btn-secondary btn-sm">
+            ← Configure
+          </button>
+        </div>
+      </div>
+
+      <!-- Simulation Viewport -->
+      <div class="sim-viewport card">
+        <!-- Dynamic content will be generated here -->
+        <div id="simulation-container" class="simulation-container"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>&copy; 2026 Elevate Systems. Designed for visual excellence and peak performance.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

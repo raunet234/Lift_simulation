@@ -1,0 +1,13 @@
+{
+  "name": "lift-simulation",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite src",
+    "build": "vite build src",
+    "preview": "vite preview src"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
