@@ -3,9 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "dev": "vite src",
-    "build": "vite build src",
-    "preview": "vite preview src"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
     "vite": "^5.0.0"
